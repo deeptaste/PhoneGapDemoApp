@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="no-js ui-mobile-rendering" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>PhoneGap Demo App</title>
+
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.3.2.js"></script>
+		
+		<link rel="stylesheet" href="css/style.css"/>
+		<script type="text/javascript" src="js/accelerometer.js"></script>
+		<script type="text/javascript" src="js/general.js"></script>
+		<script type="text/javascript" src="js/cordova.js"></script>
+
+		<script type="text/javascript">
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+				accelerometer();
+			}
+		</script>
+	</head>
+	<body>
+		<!-- Begin Home page -->
+		<div id="home" data-role="page" data-title="Home" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Accelerometer</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					<div class="inner-frame">
+						<table id="NineByNineCells">
+							<tr id="row1">
+								<td id="cell1">Top<br />Left</td>
+								<td id="cell2">Top</td>
+								<td id="cell3">Top<br />Right</td>
+							</tr>
+							<tr id="row2">
+								<td id="cell4">Left</td>
+								<td id="cell5">Center</td>
+								<td id="cell6">Right</td>
+							</tr>
+							<tr id="row3">
+								<td id="cell7">Bottom<br />Left</td>
+								<td id="cell8">Bottom</td>
+								<td id="cell9">Bottom<br />Right</td>
+							</tr>
+						</table>
+					</div>
+					<div class="feature-info">
+						<p id="accelerometer">Waiting for accelerometer...</p>
+				    </div>
+				    <div class="btn-frame">
+						<div class="custom-btn" onclick="stopAccelerometer();">Stop Accelerometer</div>
+				    </div>
+				</div>
+			</div>
+			
+			<!-- Start Of Right Panel -->
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="index.html" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="deviceInfo.html" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="camera.html" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="geoLocation.html" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="contacts.html" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="media.html" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="aboutUs.html" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			<!-- End of Right Panel -->
+		</div>
+		<!-- End Home page -->
+	</body>
+</html>

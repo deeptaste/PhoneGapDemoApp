@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js ui-mobile-rendering" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>PhoneGap Demo App</title>
+
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.3.2.js"></script>
+		
+		<link rel="stylesheet" href="css/style.css"/>
+		<script type="text/javascript" src="js/general.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/cordova.js"></script>
+	</head>
+	<body>
+		<!-- Begin Home page -->
+		<div id="home" data-role="page" data-title="Home" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>My Demo App</h1>
+				<a href="#right-panel" data-icon="info" data-iconpos="notext" class="ui-btn-right">Profile</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div id="logos" class="main-frame">
+					<img src="css/images/phoneGap-logo.png" style="width: 50px; height: 50px;" />
+					<img src="css/images/jQueryMobile-logo.png" style="width: 176px; height: 50px;" />
+				</div>
+				
+				<div id="menus">
+					<ul data-role="listview" data-inset="true" data-filter="false" data-theme="c" data-divider-theme="c" data-icon="arrow-r">
+						<li data-role="list-divider">Information</li>
+						<li><a href="deviceInfo.html" data-transition="slide">Device Info</a></li>
+						
+						<li data-role="list-divider">Hardware</li>
+						<li><a href="accelerometer.html" data-transition="slide">Accelerometer</a></li>
+						<li><a href="camera.html" data-transition="slide">Camera</a></li>
+						<li><a href="geoLocation.html" data-transition="slide">Geolocation</a></li>
+						
+						<li data-role="list-divider">System</li>
+						<li><a href="contacts.html" data-transition="slide">Contacts</a></li>
+						<li><a href="media.html" data-transition="slide">Media</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Start Of Right Panel -->
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+						<form id="userLoginForm" class="userForm" data-ajax="false">
+							<div id="userLoginSection">
+								<h2>User Login</h2>
+								<label for="name">Username</label>
+								<input type="text" name="username" id="username" value="" data-clear-btn="false" data-mini="true">
+		
+								<label for="password">Password:</label>
+								<input type="password" name="password" id="password" value="" data-clear-btn="false" autocomplete="off" data-mini="true">
+		
+								<label for="rememberMe">Remember Me?</label>
+								<input type="checkbox" name="rememberMe" id="rememberMe" value="" data-clear-btn="false" autocomplete="off" data-mini="true">
+								
+								<div class="ui-grid-a">
+								    <div class="ui-block-b">
+								    	<a href="#" id="login" data-role="button" data-theme="b" data-mini="true">Login</a>
+							    	</div>
+								</div>
+							</div>
+
+							<h1 id="userRegistrationLink" onclick="userRegistrationDisplay()">Not a member?</h1>
+						</form>
+						
+						<form id="userRegistrationForm" class="userForm" data-ajax="false" method="post">	
+							<div id="userRegistrationSection">
+								<h2>Create new user</h2>
+								<label for="name">Username</label>
+								<input type="text" name="username" id="username" value="" data-clear-btn="false" data-mini="true">
+		
+								<label for="password">Password:</label>
+								<input type="password" name="password" id="password" value="" data-clear-btn="false" autocomplete="off" data-mini="true">
+		
+								<label for="password">Confirm Password:</label>
+								<input type="password" name="confirmPassword" id="confirmPassword" value="" data-clear-btn="false" autocomplete="off" data-mini="true">
+		
+								<label for="email">Email</label>
+								<input type="email" name="email" id="email" value="" data-clear-btn="false" data-mini="true">
+		
+								<div class="ui-grid-a">
+								    <div class="ui-block-a">
+								    	<a href="#" id="register" data-rel="close" data-role="button" data-theme="b" data-mini="true">Save</a>
+							    	</div>
+								    <div class="ui-block-b">
+								    	<a href="#" id="cancel" data-rel="close" data-role="button" data-theme="c" data-mini="true">Cancel</a>
+							    	</div>
+								</div>
+							</div>
+							
+							<h1 id="userLoginLink" onclick="userLoginDisplay()">Already a member?</h1>
+						</form>
+				</div>
+			</div>
+			<!-- End of Right Panel -->
+			
+			<div class="copyright">
+				Copyright. Diptesh Shrestha &copy; 2014
+			</div>
+		</div>
+		<!-- End Home page -->
+	</body>
+</html>
