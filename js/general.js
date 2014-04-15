@@ -28,6 +28,10 @@ function numLength(len, num) {
 	return num;
 }
 
+function onError(error) {
+	alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+}
+
 function userRegistrationDisplay() {
 	document.getElementById('userRegistrationSection').setAttribute('style', 'display: block !important;');
 	document.getElementById('userLoginLink').setAttribute('style', 'display: block !important;');

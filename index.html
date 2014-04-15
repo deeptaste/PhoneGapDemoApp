@@ -14,9 +14,10 @@
 		<script type="text/javascript" src="js/general.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/cordova.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUV4-YgcCcTMrO5kZH9Bpxf7O39hpY5HU&sensor=true"></script>
 	</head>
 	<body>
-		<!-- Begin Home page -->
+		<!-- Begin of Home page -->
 		<div id="home" data-role="page" data-title="Home" class="ui-responsive-panel">
 
 			<div data-role="header" data-theme="b">
@@ -33,21 +34,20 @@
 				<div id="menus">
 					<ul data-role="listview" data-inset="true" data-filter="false" data-theme="c" data-divider-theme="c" data-icon="arrow-r">
 						<li data-role="list-divider">Information</li>
-						<li><a href="deviceInfo.html" data-transition="slide">Device Info</a></li>
+						<li><a href="#deviceInfo" data-transition="slide">Device Info</a></li>
 						
 						<li data-role="list-divider">Hardware</li>
-						<li><a href="accelerometer.html" data-transition="slide">Accelerometer</a></li>
-						<li><a href="camera.html" data-transition="slide">Camera</a></li>
-						<li><a href="geoLocation.html" data-transition="slide">Geolocation</a></li>
+						<li><a href="#accelerometer" data-transition="slide">Accelerometer</a></li>
+						<li><a href="#camera" data-transition="slide">Camera</a></li>
+						<li><a href="#geolocation" data-transition="slide">Geolocation</a></li>
 						
 						<li data-role="list-divider">System</li>
-						<li><a href="contacts.html" data-transition="slide">Contacts</a></li>
-						<li><a href="media.html" data-transition="slide">Media</a></li>
+						<li><a href="#contacts" data-transition="slide">Contacts</a></li>
+						<li><a href="#media" data-transition="slide">Media</a></li>
 					</ul>
 				</div>
 			</div>
 			
-			<!-- Start Of Right Panel -->
 			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
 				<div class="right-bar">
 						<form id="userLoginForm" class="userForm" data-ajax="false">
@@ -101,12 +101,329 @@
 						</form>
 				</div>
 			</div>
-			<!-- End of Right Panel -->
 			
 			<div class="copyright">
 				Copyright. Diptesh Shrestha &copy; 2014
 			</div>
 		</div>
-		<!-- End Home page -->
+		<!-- End of Home page -->
+		
+		<!-- Begin of DeviceInfo page -->
+		<div id="deviceInfo" data-role="page" data-title="DeviceInfo" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Device Info</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					<p id="deviceProperties">Loading device properties...</p>
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End DeviceInfo page -->
+		
+		<!-- Begin of Accelerometer page -->
+		<div id="accelerometer" data-role="page" data-title="Accelerometer" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Accelerometer</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					<div class="inner-frame">
+						<table id="NineByNineCells">
+							<tr id="row1">
+								<td id="cell1">Top<br />Left</td>
+								<td id="cell2">Top</td>
+								<td id="cell3">Top<br />Right</td>
+							</tr>
+							<tr id="row2">
+								<td id="cell4">Left</td>
+								<td id="cell5">Center</td>
+								<td id="cell6">Right</td>
+							</tr>
+							<tr id="row3">
+								<td id="cell7">Bottom<br />Left</td>
+								<td id="cell8">Bottom</td>
+								<td id="cell9">Bottom<br />Right</td>
+							</tr>
+						</table>
+					</div>
+					<div class="feature-info">
+						<p id="accelerometer-details">Waiting for accelerometer...</p>
+				    </div>
+				    <div class="btn-frame">
+						<div class="custom-btn" onclick="stopAccelerometer();">Stop Accelerometer</div>
+				    </div>
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End of Accelerometer page -->
+		
+		<!-- Begin of Camera page -->
+		<div id="camera" data-role="page" data-title="Camera" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Camera</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					<div class="img-frame">
+						<div class="img-preview"><label>Picture Preview</label></div>
+					</div>
+					<div class="btn-frame">
+						<div class="custom-btn" onclick="capturePhoto();">Capture Photo</div>
+					    <div class="custom-btn" onclick="capturePhotoEdit();">Capture Editable Photo</div>
+					    <div class="custom-btn" onclick="getPhoto(piuectureSource.PHOTOLIBRARY);">From Photo Library</div>
+					    <div class="custom-btn" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</div>
+				    </div>
+				    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+				    <img style="display:none;" id="largeImage" src="" />
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End of Camera page -->
+		
+		<!-- Begin of Geolocation page -->
+		<div id="geolocation" data-role="page" data-title="Geolocation" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Geolocation</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					<div id="map-frame"><label>Map</label></div>
+					<div class="feature-info">
+						<p id="geolocation-details">Finding geolocation...</p>
+				    </div>
+				    <div class="btn-frame">
+						<div class="custom-btn" onclick="stopGeolocation();">Stop Geolocation Watch</div>
+				    </div>
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End of Geolocation page -->
+		
+		<!-- Begin of Contacts page -->
+		<div id="contacts" data-role="page" data-title="Contacts" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Contacts</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End of Contacts page -->
+		
+		<!-- Begin of Media page -->
+		<div id="media" data-role="page" data-title="Media" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>Media</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End of Media page -->
+		
+		<!-- Begin of AboutUs page -->
+		<div id="aboutUs" data-role="page" data-title="AboutUs" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>About Us</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="more.html" data-transition="slide"><div class="side-menu">More</div></a>
+				</div>
+			</div>
+		</div>
+		<!-- End of AboutUs page -->
+		
+		<!-- Begin of More page -->
+		<div id="more" data-role="page" data-title="More" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="b">
+				<h1>More</h1>
+		    	<a href="#back" class="headerButton" data-role="button" data-icon="back" data-iconpos="notext" data-inline="false" data-rel="back">Back</a>
+				<a href="#right-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			</div>
+
+			<div data-role="content" class="main-body">
+				<div class="main-frame">
+					
+				</div>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" id="right-panel" data-theme="b">
+				<div class="right-bar">
+					<a href="#home" data-transition="slide"><div class="side-menu">Home</div></a>
+					<p>Information</p>
+					<a href="#deviceInfo" data-transition="slide"><div class="side-menu">Device Info</div></a>
+					<p>Hardware</p>
+					<a href="#accelerometer" data-transition="slide"><div class="side-menu">Accelerometer</div></a>
+					<a href="#camera" data-transition="slide"><div class="side-menu">Camera</div></a>
+					<a href="#geolocation" data-transition="slide"><div class="side-menu">Geolocation</div></a>
+					<p>System</p>
+					<a href="#contacts" data-transition="slide"><div class="side-menu">Contacts</div></a>
+					<a href="#media" data-transition="slide"><div class="side-menu">Media</div></a>
+					<p>Extra</p>
+					<a href="#aboutUs" data-transition="slide"><div class="side-menu">About Us</div></a>
+				</div>
+			</div>
+			
+		</div>
+		<!-- End of More page -->
 	</body>
 </html>
