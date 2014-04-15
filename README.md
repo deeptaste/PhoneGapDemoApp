@@ -23,3 +23,9 @@ Version 1.0
 - User login and registration funcationalities have been included but implements basic testing with server web-service. 
 - Proper implementation of user login and registration funcationalities will be included in next version.
 - Pages for Device Info, Accelerometer, Camera and Geolocation also have right side bar for quick navigation. 
+
+Version 1.1
+-----------
+- Changed to SPA (Single Page Application). Therefore, all separate HTML files merged into index.html. 
+- Also, the code for respective js files for each HTML pages are not placed either in 'index.js' or 'general.js'
+- Changes done to fix jQuery Mobile event handling issues.
