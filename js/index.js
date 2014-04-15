@@ -1,7 +1,13 @@
+$(document).bind("mobileinit", function(){
+  $.extend(  $.mobile , {
+   defaultPageTransition: 'none'
+  });
+});
+
 ////////////////////////////////////////////////
 /* home page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#home', function(){  
+$(document).on('pageshow', '#home', function(){  
 	
 	// User Login via Ajax Functionalities
 	$(document).on('click', '#login', function(e) {
@@ -87,7 +93,7 @@ $(document).on('pageinit', '#home', function(){
 ////////////////////////////////////////////////
 /* deviceInfo page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#deviceInfo', function() {
+$(document).on('pageshow', '#deviceInfo', function() {
 	deviceInfo();
 });
 
@@ -108,7 +114,7 @@ function deviceInfo() {
 ////////////////////////////////////////////////
 /* accelerometer page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#accelerometer', function() {
+$(document).on('pageshow', '#accelerometer', function() {
 	accelerometer();
 });
 
@@ -303,7 +309,7 @@ function stopAccelerometer() {
 ////////////////////////////////////////////////
 /* camera page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#camera', function() {
+$(document).on('pageshow', '#camera', function() {
 	camera();
 });
 
@@ -346,7 +352,7 @@ function getPhoto(source) {
 ////////////////////////////////////////////////
 /* geolocation page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#geolocation', function() {
+$(document).on('pageshow', '#geolocation', function() {
 	geolocation();
 });
 
@@ -436,27 +442,27 @@ function stopGeolocation() {
 ////////////////////////////////////////////////
 /* contacts page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#contacts', function() {
+$(document).on('pageshow', '#contacts', function() {
 	
 });
 
 ////////////////////////////////////////////////
 /* media page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#media', function() {
+$(document).on('pageshow', '#media', function() {
 	
 });
 
 ////////////////////////////////////////////////
 /* aboutUs page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#aboutUs', function() {
+$(document).on('pageshow', '#aboutUs', function() {
 	
 });
 
 ////////////////////////////////////////////////
 /* more page */
 ////////////////////////////////////////////////
-$(document).on('pageinit', '#more', function() {
+$(document).on('pageshow', '#more', function() {
 	
 });
