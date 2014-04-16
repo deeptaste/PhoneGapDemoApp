@@ -128,6 +128,12 @@
 	text-shadow: 0 1px 0 #3e6790;
 	font-size: 30px;
 	font-weight: bolder;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#334B59),to(#638DA5));
+	background-image: -webkit-linear-gradient(#334B59,#638DA5);
+	background-image: -moz-linear-gradient(#334B59,#638DA5);
+	background-image: -ms-linear-gradient(#334B59,#638DA5);
+	background-image: -o-linear-gradient(#334B59,#638DA5);
+	background-image: linear-gradient(#334B59,#638DA5)
 }
 .ui-bar-b, .ui-bar-b input, .ui-bar-b select, .ui-bar-b textarea, .ui-bar-b button {
 	font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;

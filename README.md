@@ -27,5 +27,14 @@ Version 1.0
 Version 1.1
 -----------
 - Changed to SPA (Single Page Application). Therefore, all separate HTML files merged into index.html. 
-- Also, the code for respective js files for each HTML pages are not placed either in 'index.js' or 'general.js'
+- Also, the code for respective js files for each HTML pages are placed either in 'index.js' or 'general.js'.
 - Changes done to fix jQuery Mobile event handling issues.
+
+Version 1.2
+-----------
+- Code changed to make sure PhoneGap & jQuery.Mobile libraries are loaded properly before executing any other events.
+- Font-awesome used for some cool icons on left side bar of sub-pages.
+- All custom js code are now placed under one file named app.js.
+- These new js codes make use of object notion to make the code more organized rather than having them in same level
+- Some other minor changes in files and folder structure.
+- Other bug-fixing.
