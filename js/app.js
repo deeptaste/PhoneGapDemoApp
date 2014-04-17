@@ -19,7 +19,7 @@ var App = {
 		    var jqmReadyDeferred    = jQuery.Deferred();
 		    
 		    if (App.testing_on_desktop) {
-		        console.log("PhoneGap finished loading");
+		        //console.log("PhoneGap finished loading");
 		        _onDeviceReady();
 		        deviceReadyDeferred.resolve();
 		    } 
@@ -96,16 +96,16 @@ var App = {
 				//console.log("[App.feature.deviceInfo.showData]");
 				var element = document.getElementById('deviceProperties');
 				element.innerHTML = '' + 
-					'<label class=\'data-title\'>Device Name:</label> '     + 
-					'<label class=\'data-info\'>' + device.name + '</label>' + 
-					'<label class=\'data-title\'>Device Cordova:</label> '  + 
-					'<label class=\'data-info\'>' + device.cordova + '</label>' + 
-					'<label class=\'data-title\'>Device Platform:</label> ' + 
-					'<label class=\'data-info\'>' + device.platform + '</label>' + 
-					'<label class=\'data-title\'>Device UUID:</label> '     + 
-					'<label class=\'data-info\'>' + device.uuid + '</label>' + 
-					'<label class=\'data-title\'>Device Version:</label> '  + 
-					'<label class=\'data-info\'>' + device.version + '</label>';
+					'<label class=\'data-title\'>Device Name:</label> '     		+ 
+					'<label class=\'data-info\'>' + device.name + '</label>' 		+ 
+					'<label class=\'data-title\'>Device Platform:</label> ' 		+ 
+					'<label class=\'data-info\'>' + device.platform + '</label>' 	+ 
+					'<label class=\'data-title\'>Device Version:</label> '  		+ 
+					'<label class=\'data-info\'>' + device.version + '</label>' 	+ 
+					'<label class=\'data-title\'>Device UUID:</label> '     		+ 
+					'<label class=\'data-info\'>' + device.uuid + '</label>' 		+ 
+					'<label class=\'data-title\'>Cordova Version:</label> '  		+ 
+					'<label class=\'data-info\'>' + device.cordova + '</label>';
 			},
 		},
 		"accelerometer": {
@@ -308,21 +308,23 @@ var App = {
 			},
 			"onPhotoDataSuccess": function(imageData) {
 				//console.log("[App.feature.camera.onPhotoDataSuccess]");
-				var smallImage = document.getElementById('smallImage');
-				smallImage.style.display = 'block';
-				smallImage.src = "data:image/jpeg;base64," + imageData;
+				var imgPreview = document.getElementById('img-preview');
+				imgPreview.style.display = 'block !important';
+				imgPreview.src = "data:image/jpeg;base64," + imageData;
 			},		
 			"onPhotoURISuccess": function(imageURI) {
 				//console.log("[App.feature.camera.onPhotoURISuccess]");
 				var largeImage = document.getElementById('largeImage');
-				largeImage.style.display = 'block';
+				largeImage.style.display = 'block !important';
 				largeImage.src = imageURI;
 			},
 			"capturePhoto": function() {
 				//console.log("[App.feature.camera.capturePhoto]");
 				var options = { 
 						quality: 50, 
-						destinationType: App.feature.camera.destinationType.FILE_URI,
+						destinationType: App.feature.camera.destinationType.DATA_URL,
+                        sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Album
+                        encodingType: 0     // 0=JPG 1=PNG
 				};
 				navigator.camera.getPicture(App.feature.camera.onPhotoDataSuccess, App.data.showError, options);
 			},
@@ -331,7 +333,9 @@ var App = {
 				var options = { 
 						quality: 20, 
 						allowEdit: true,
-						destinationType: App.feature.camera.destinationType.DATA_URL
+						destinationType: App.feature.camera.destinationType.DATA_URL,
+                        sourceType: 1,
+                        encodingType: 0
 				};
 				navigator.camera.getPicture(App.feature.camera.onPhotoDataSuccess, App.data.showError, options);
 			},

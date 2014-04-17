@@ -38,3 +38,11 @@ Version 1.2
 - These new js codes make use of object notion to make the code more organized rather than having them in same level
 - Some other minor changes in files and folder structure.
 - Other bug-fixing.
+
+Version 1.3
+-----------
+- FastClick library added for quick navigation between pages.
+- Custom css file renamed to 'app.css'.
+- In config.xml file, Core plugins added directly as in PhoneGap 3 the core api are no more included by default.
+- All the necessary icons for different platforms are now added, also the design of app icon has been modified.
+- Other bug-fixing.
