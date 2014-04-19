@@ -46,12 +46,16 @@ var App = {
 		
 		function _onDeviceReady () {
 		    //console.log("[onDeviceReady]");
-		    //PGproxy.navigator.splashscreen.hide();
+		    PGproxy.navigator.notification.alert(device.name, null, 'ERROR', 'OK');
 		};
 		
 		function initPages () {
 		    //console.log("[initPages]");
 		    jQuery(document).bind("pageinit", _initPages);
+		    
+		    window.addEventListener('load', function () {
+				FastClick.attach(document.body);
+			}, false);
 		};
 		
 		function _initPages () {
