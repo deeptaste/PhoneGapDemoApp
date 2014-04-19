@@ -15,13 +15,12 @@
 		<script charset="utf-8" src="js/index.js"></script>
 		
 	</head>
-	<body onload="init();">
+	<body onload="load();">
 		<!-- Begin of Home page -->
 		<div id="Home" data-role="page" data-title="Home" class="ui-responsive-panel">
 
 			<div data-role="header" data-theme="b">
 				<h1>My Demo App</h1>
-				<a href="#right-panel" data-icon="info" data-iconpos="notext" class="ui-btn-right">Profile</a>
 			</div>
 
 			<div data-role="content" class="main-body">
@@ -31,7 +30,7 @@
 				</div>
 				
 				<div id="menus">
-					<strong id="name">&nbsp;</strong>
+					<label id="deviceName"></label>
 				</div>
 			</div>
 			

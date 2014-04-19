@@ -1,10 +1,8 @@
-function init() {
+function load() {
     document.addEventListener("deviceready", onDeviceReady, true);
 }
 
 
 var onDeviceReady = function() {
-    navigator.notification.alert(device.name, null, 'ERROR', 'OK');
-    
-    document.getElementById('info').innerHTML = device.name; 
+    document.getElementById('deviceName').innerHTML = device.name;
 };
