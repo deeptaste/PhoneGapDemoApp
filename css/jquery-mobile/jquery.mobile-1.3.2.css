@@ -121,19 +121,19 @@
 	text-decoration: none
 }
 .ui-bar-b {
-	border: 1px solid #638DA5;
-	background: #638DA5;
-	color: #DAD576;
+	border: 1px solid #23354B;
+	background: #324B6B;
+	color: #FFFFFF;
 	font-family: Georgia, Verdana, Trebuchet MS;
 	text-shadow: 0 1px 0 #3e6790;
 	font-size: 30px;
 	font-weight: bolder;
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#334B59),to(#638DA5));
-	background-image: -webkit-linear-gradient(#334B59,#638DA5);
-	background-image: -moz-linear-gradient(#334B59,#638DA5);
-	background-image: -ms-linear-gradient(#334B59,#638DA5);
-	background-image: -o-linear-gradient(#334B59,#638DA5);
-	background-image: linear-gradient(#334B59,#638DA5)
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#395577),to(#283C55));
+	background-image: -webkit-linear-gradient(#395577,#283C55);
+	background-image: -moz-linear-gradient(#395577,#283C55);
+	background-image: -ms-linear-gradient(#395577,#283C55);
+	background-image: -o-linear-gradient(#395577,#283C55);
+	background-image: linear-gradient(#395577,#283C55);	
 }
 .ui-bar-b, .ui-bar-b input, .ui-bar-b select, .ui-bar-b textarea, .ui-bar-b button {
 	font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
@@ -184,17 +184,17 @@
 	color: #2489ce
 }
 .ui-btn-up-b {
-	border: 1px solid #044062;
-	background: #3C5868;
+	border: 1px solid #314966;
+	background: #406086;
 	font-weight: 700;
 	color: #fff;
 	text-shadow: 0 1px 0 #194b7e;
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#3C5868),to(#6891A8));
-	background-image: -webkit-linear-gradient(#3C5868,#6891A8);
-	background-image: -moz-linear-gradient(#3C5868,#6891A8);
-	background-image: -ms-linear-gradient(#3C5868,#6891A8);
-	background-image: -o-linear-gradient(#3C5868,#6891A8);
-	background-image: linear-gradient(#3C5868,#6891A8)
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#406086),to(#7596BD));
+	background-image: -webkit-linear-gradient(#406086,#7596BD);
+	background-image: -moz-linear-gradient(#406086,#7596BD);
+	background-image: -ms-linear-gradient(#406086,#7596BD);
+	background-image: -o-linear-gradient(#406086,#7596BD);
+	background-image: linear-gradient(#406086,#7596BD)
 }
 .ui-btn-up-b:visited, .ui-btn-up-b a.ui-link-inherit {
 	color: #fff
@@ -1046,12 +1046,12 @@ body.ui-mobile-viewport, div.ui-mobile-viewport {
 .ui-header .ui-title, .ui-footer .ui-title {
 	min-height: 1.1em;
 	text-align: center;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bolder;
-	color: #DAD576;
-	text-shadow: rgb(56, 77, 90) 3px 1px 8px;
+	color: #FFFFFF;
+	text-shadow: rgb(59, 59, 59) 2px 2px 10px;
 	display: block;
-	margin: .3em 8% .4em;
+	margin: .5em 5% .5em;
 	padding: 0;
 	text-overflow: ellipsis;
 	overflow: hidden;
