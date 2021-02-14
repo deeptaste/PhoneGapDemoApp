@@ -1,7 +1,5 @@
 # PhoneGap Demo App
 
-=================
-
 This mobile app uses HTML5, CSS3 and Javascript technologies. JQuery Mobile has been used as UI framework.
 This cross-platform mobile application has been developed with the help of PhoneGap Build.
 
@@ -15,8 +13,6 @@ Name : Diptesh Shrestha
 Email : diptesh.shrestha@gmail.com
 
 ## Version 1.0
-
----
 
 - Main page with links for testing some mobile device features.
 - Links include Device Info, Accelerometer, Camera, Geolocation, Contacts and Media.
@@ -35,8 +31,6 @@ Email : diptesh.shrestha@gmail.com
 
 ## Version 1.2
 
----
-
 - Code changed to make sure PhoneGap & jQuery.Mobile libraries are loaded properly before executing any other events.
 - Font-awesome used for some cool icons on left side bar of sub-pages.
 - All custom js code are now placed under one file named app.js.
@@ -46,10 +40,12 @@ Email : diptesh.shrestha@gmail.com
 
 ## Version 1.3
 
----
-
 - FastClick library added for quick navigation between pages.
 - Custom css file renamed to 'app.css'.
 - In config.xml file, Core plugins added directly as in PhoneGap 3 the core api are no more included by default.
 - All the necessary icons for different platforms are now added, also the design of app icon has been modified.
 - Other bug-fixing.
+
+## Version 1.4
+
+- Added error page (during learning and development on using git and github... trial)
